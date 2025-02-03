@@ -15,7 +15,7 @@
   --padding-s: 10px;
   --padding-m: 20px;
   --padding-l: 30px;
-  
+
   --max-width: 1440px;
 
   @media screen and (max-width: 1024px) {
@@ -53,5 +53,9 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+li{
+  list-style: none;
 }
 
