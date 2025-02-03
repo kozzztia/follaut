@@ -1,0 +1,34 @@
+.mainLayout{
+    min-height: 100vh;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto 1fr auto ;
+    grid-template-columns: 250px 1fr;
+    grid-template-areas: "header header header"
+                          "navigation content content"
+                          "navigation content content"
+                          "navigation content content"
+                          "footer footer footer"
+    ;
+    /* test */
+    &>*{
+        border: 1px solid red;
+    }
+    .layoutHeader{
+        grid-area: header;
+        padding: var(--padding-m);
+    }
+    .layoytNavigation{
+        grid-area: navigation;
+        padding: var(--padding-m);
+    }
+    .layoutContent{
+        grid-area: content;
+        padding: var(--padding-m);
+    }
+    .layoutFooter{
+        grid-area: footer;
+        padding : var(--padding-m);
+    }
+}
