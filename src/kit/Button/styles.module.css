@@ -1,11 +1,13 @@
 .button {
+  overflow: hidden;
   padding: 10px 20px;
   cursor: pointer;
   border: none;
-  border-radius: 5px;
-  background-image: url("/dirtOne.png"); /* ✅ Путь к файлу */
+  border-radius: 10px;
+  background-color: var(--green-bg-color);
   background-size: cover;
-  background-position: center;
-
-  color: #22281f;
+  background-position: 20px center;
+  border: 3px solid var(--green-border-color);
+  color: var(--green-text-color);
+  font-weight: bolder;
 }

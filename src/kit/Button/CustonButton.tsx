@@ -6,7 +6,7 @@ const CustonButton: React.FC<{
     title: string,
     className?: string,
 
-}> = ({ title, className }) => {
+}> = ({ title = "Button", className }) => {
     const handler = () => console.log(title)
     return (
         <button

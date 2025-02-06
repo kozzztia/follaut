@@ -1,5 +1,6 @@
 .mainLayout{
     min-height: 100vh;
+    position: relative;
     max-width: var(--max-width);
     margin: 0 auto;
     display: grid;
@@ -11,7 +12,9 @@
                           "navigation content content"
                           "footer footer footer"
     ;
-
+        background-image: url("/map.webp");
+        background-size: cover;
+        background-position: left bottom;
     /* test */
     &>*{
         border: 1px solid red;
@@ -20,7 +23,7 @@
         grid-area: header;
         padding: var(--padding-m);
     }
-    .layoytNavigation{
+    .layoutNavigation{
         grid-area: navigation;
         padding: var(--padding-m);
     }
@@ -31,5 +34,15 @@
     .layoutFooter{
         grid-area: footer;
         padding : var(--padding-m);
+    }
+    @media screen and (max-width: 600px) {
+        grid-template-areas: "header header header"
+                              "content content content"
+                              "content content content"
+                              "footer footer footer"
+        ;
+        .layoutNavigation{
+            position: absolute;
+        }
     }
 }

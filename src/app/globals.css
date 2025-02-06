@@ -58,10 +58,3 @@ a {
 li{
   list-style: none;
 }
-
-section{
-  background-image: url("/map.webp");
-  background-size: cover;
-  background-position: left bottom;
-}
-
