@@ -18,7 +18,7 @@
         background-position: left bottom;
     /* test */
     &>*{
-        border: 1px solid red;
+        /* border: 1px solid red; */
         padding: var(--padding-s);
     }
     .layoutHeader{
