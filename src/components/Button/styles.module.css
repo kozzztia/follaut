@@ -1,0 +1,40 @@
+
+
+.buttonWrapper{
+  background-image: url("/elements/label.png");
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+  width : 130px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: var(--padding-s);
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: var(--element-shadow);
+  flex-shrink: 0;
+  position: relative;
+  .button{
+    width :25px;
+    height :25px;
+  }
+  cursor: pointer;
+}
+
+.dirty{
+  position: absolute;
+  background-image: url("/elements/dirt.png");
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  left: -40px;
+  width: 120%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+
+
+
+
