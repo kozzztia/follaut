@@ -16,6 +16,7 @@
   flex-shrink: 0;
   position: relative;
   user-select: none;
+  border-radius: var(--radius);
   .button{
     width :25px;
     height :25px;

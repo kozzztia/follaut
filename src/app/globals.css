@@ -10,6 +10,7 @@
   --transition: all 0.1s ease;
   --element-shadow: inset 0 0 5px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 1);
   --text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  --radius: 5px;
 
   --padding-s: 10px;
   --padding-m: 20px;

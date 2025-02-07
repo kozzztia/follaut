@@ -1,0 +1,31 @@
+
+.toggleWrapper{
+    height: 70px;
+    width: 40px;
+    background-image: url("/elements/toggler.png");
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: var(--element-shadow);
+    border-radius: var(--radius);
+    cursor: pointer;
+    padding: var(--padding-s) 0;
+    .button{
+        width: 25px;
+        height: 25px;
+        background-image: url("/elements/button.png");
+        background-color: inherit;
+        background-size: cover;
+        background-position: center;
+        box-shadow: var(--element-shadow);
+        border: none;
+        outline: none;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+}

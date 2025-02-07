@@ -5,11 +5,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--padding-s);
   overflow: hidden;
-  border-radius: 5px;
   flex-shrink: 0;
-  position: relative;
   user-select: none;
   fill: var(--green-text-color);
   filter: drop-shadow(var(--text-shadow));
