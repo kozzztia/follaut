@@ -3,8 +3,12 @@ import styles from "./styles.module.css"
 import CustomButton from '../kit/customButton/CustomButton'
 import CustomTitle from '../kit/title/CustomTitle'
 
-// Основной компонент кнопки
-const NavigationButton: FC<{ path: string,  title: string, className?: string,}> = ({ path, title}) => {
+type Props = {
+    path: string,  
+    title: string,
+}
+
+const NavigationButton: FC<Props> = ({ path, title}) => {
         return (
             <label className={styles.buttonWrapper}>
                 <CustomTitle title={title} />
