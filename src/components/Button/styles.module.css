@@ -3,9 +3,10 @@
 .buttonWrapper{
   background-image: url("/elements/label.png");
   background-color: transparent;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
-  width : 130px;
+  min-width : 130px;
+  max-width: 200px;
   display: flex;
   justify-content: flex-end;
   align-items: center;

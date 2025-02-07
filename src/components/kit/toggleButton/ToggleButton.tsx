@@ -5,18 +5,17 @@ import Navigation from '@/templates/navigation/Navigation';
 
 
 
-const ToggleButton: FC<{className?: string}> = ({className}) => {
+const ToggleButton: FC = () => {
   const [isOpen, setIsOpen] = React.useState(false)
 
 
   const toggleHandler = () => {
     setIsOpen(!isOpen)
-    console.log(isOpen)
   }
   return (
-    <label className={`${styles.toggleWrapper} ${className}`}>
+    <label className={`${styles.toggleWrapper}`}>
       <button
-        className={styles.button}
+        className={`${styles.button} ${isOpen?styles.active: ""}`}
         onClick={toggleHandler}>
       </button>
       <Navigation active={isOpen}/>
