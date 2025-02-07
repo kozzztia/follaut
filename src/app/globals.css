@@ -7,9 +7,9 @@
 
   --decore-font-family: "VT323", monospace;
   --font-family: "Noto Sans", sans-serif;
+  --transition: all .1s ease;
+  --element-shadow: inset 0 0 5px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 1);
 
-  --background-color: var(--green-bg-color);
-  --foreground: var(--green-text-color);
 
 
   --padding-s: 10px;
@@ -37,8 +37,8 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background-color);
+  color: var(--green-text-color);
+  background: var(--green-bg-color);
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
