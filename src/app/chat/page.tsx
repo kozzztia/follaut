@@ -1,9 +1,11 @@
 import React from 'react'
 
 const page = () => {
-  return (
-    <div>about</div>
-  )
+    return (
+        <>
+            chat
+        </>
+    )
 }
 
 export default page

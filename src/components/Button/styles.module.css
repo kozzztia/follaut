@@ -15,14 +15,15 @@
   box-shadow: var(--element-shadow);
   flex-shrink: 0;
   position: relative;
+  user-select: none;
   .button{
     width :25px;
     height :25px;
   }
   cursor: pointer;
-}
 
-.dirty{
+}
+.dirt{
   position: absolute;
   background-image: url("/elements/dirt.png");
   background-size: cover;
@@ -31,8 +32,9 @@
   left: -40px;
   width: 120%;
   height: 100%;
-  opacity: 0.5;
+  opacity: .3;
 }
+
 
 
 

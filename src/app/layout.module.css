@@ -1,11 +1,12 @@
 .mainLayout{
     min-height: 100vh;
+    min-height: 100svh;
     position: relative;
     max-width: var(--max-width);
     margin: 0 auto;
     display: grid;
     grid-template-rows: auto 1fr auto ;
-    grid-template-columns: auto 100%;
+    grid-template-columns: auto 1fr;
     grid-template-areas: "header header header"
                           "navigation content content"
                           "navigation content content"
@@ -32,6 +33,7 @@
     }
     .layoutFooter{
         grid-area: footer;
+
     }
     /* @media screen and (max-width: 600px) {
         grid-template-areas: "header header header"
