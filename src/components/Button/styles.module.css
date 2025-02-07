@@ -1,59 +1,6 @@
 
-.button {
-  transition: var(--transition); /* Исправлено */
-  overflow: hidden;
-  cursor: pointer;
-  border: none;
-  border-radius: 50%;
-  background-image: url("/elements/button.png");
-  background-color: transparent;
-  background-size: cover;
-  background-position: center;
-  color: var(--green-text-color);
-  font-weight: bolder;
-  width: 50px;
-  height: 50px;
-  position: relative;
-  box-shadow: var(--element-shadow);
-  flex-shrink: 0;
-  &::before {
-    transition: var(--transition); /* Исправлено */
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
-    opacity: 0;
-    background: radial-gradient(circle, var(--green-accent-color) 0%, transparent 65%);
-    border-radius: 50%;
-    z-index: 0;
-    pointer-events: none;
-  }
-  
-  &:hover::before {
-    width: 80%;
-    height: 80%;
-    opacity: 1;
-  }
-  
-  &:active {
-    transform: scale(0.95);
-  }
-  &:focus {
-    outline: none;
-    &::before {
-      width: 80%;
-      height: 80%;
-      opacity: 1;
-    }
-  }
-  
-}
 
-
-.bigWrapper{
+.buttonWrapper{
   background-image: url("/elements/label.png");
   background-color: transparent;
   background-size: cover;
@@ -68,34 +15,26 @@
   box-shadow: var(--element-shadow);
   flex-shrink: 0;
   position: relative;
-  .button{
+  button{
     width :25px;
     height :25px;
   }
-  &::after{
-    content: "";
-    display: block;
-    position: absolute;
-    background-image: url("/elements/dirt.png");
-    background-size: cover;
-    background-position: center;
-    top: 0;
-    left: -40px;
-    width: 120%;
-    height: 100%;
-    opacity: 0.8;
-  }
+  cursor: pointer;
+}
+
+.dirty{
+  position: absolute;
+  background-image: url("/elements/dirt.png");
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  left: -40px;
+  width: 120%;
+  height: 100%;
+  opacity: 0.5;
 }
 
 
 
-.title{
-  color : var(--green-accent-color);
-  font-family: var(--decore-font-family);
-  font-size: 25px;
-  width :100%;
-  text-align: center;
-  text-transform: capitalize;
-}
 
 

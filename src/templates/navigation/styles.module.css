@@ -2,4 +2,6 @@
 .nav{
     display: flex;
     flex-direction: column;
+    gap: var(--padding-s);
+    list-style: none;
 }
