@@ -8,7 +8,7 @@ const NavigationButton: FC<{ path: string,  title: string, className?: string,}>
         return (
             <label className={styles.buttonWrapper}>
                 <CustomTitle title={title} />
-                <CustomButton path={path} active={false}/>
+                <CustomButton path={path} className={styles.button}/>
                 <div className={styles.dirty}></div>
             </label>
         )

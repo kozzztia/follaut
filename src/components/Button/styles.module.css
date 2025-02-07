@@ -15,7 +15,7 @@
   box-shadow: var(--element-shadow);
   flex-shrink: 0;
   position: relative;
-  button{
+  .button{
     width :25px;
     height :25px;
   }

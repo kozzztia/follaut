@@ -4,7 +4,7 @@ import { useRouter, usePathname } from "next/navigation"
 import styles from "./styles.module.css"
 
 
-const CustomButton: FC<{path: string, active: boolean}> = ({path}) => {
+const CustomButton: FC<{path: string, className?: string}> = ({path, className = ''}) => {
     const router = useRouter()
     const pathname = usePathname()
     const active = pathname === path
@@ -17,7 +17,7 @@ const CustomButton: FC<{path: string, active: boolean}> = ({path}) => {
     return (
         <button
             onClick={handler}
-            className={`${styles.button} ${active ? styles.active : ''}`}>
+            className={`${styles.button} ${className} ${active ? styles.active : ''}`}>
         </button>
     )
 }
