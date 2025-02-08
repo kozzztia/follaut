@@ -2,9 +2,13 @@
     color : var(--green-accent-color);
     font-family: var(--decore-font-family);
     font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
     width :100%;
     text-align: center;
     text-transform: capitalize;
     opacity: 0.8;
     transition: var(--transition);
+    text-shadow: var(--text-shadow);
+
   }

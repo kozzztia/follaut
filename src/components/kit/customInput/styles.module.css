@@ -1,0 +1,30 @@
+
+.formInput{
+    background-image: url('/elements/input.png');
+    background-size: 100% 100%;
+    background-color: transparent;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width : 250px;
+    height : 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--element-shadow);  
+    padding: var(--padding-s);
+    .input{
+        background-color: transparent;
+        border: none;
+        color : var(--green-text-color);
+        font-family: var(--decore-font-family);
+        font-size: 15px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        width :100%;
+        text-align: center;
+        text-transform: capitalize;
+        opacity: 0.8;
+        transition: var(--transition);
+        text-shadow: var(--text-shadow);
+    }
+}
