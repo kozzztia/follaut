@@ -1,12 +1,12 @@
-import NavigationButton from '@/components/Button/NavigationButton'
-import LoginForm from '@/templates/form/loginForm'
+// import NavigationButton from '@/components/Button/NavigationButton'
+import LoginForm from '@/components/kit/form/loginForm'
 import React from 'react'
 
 const page = () => {
   return (
     <>
     <LoginForm />
-    <NavigationButton path={'login/registration'} title={'Registration'} />
+    {/* <NavigationButton path={'login/registration'} title={'Registration'} /> */}
     </>
   )
 }
