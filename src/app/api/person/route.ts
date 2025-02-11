@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const users = [
+const person = [
     { id: 1, name: "Sulik" },
     { id: 2, name: "Vic" },
     { id: 3, name: "Marcus" },
@@ -8,5 +8,5 @@ const users = [
 ];
 
 export async function GET() {
-    return NextResponse.json(users);
+    return NextResponse.json(person);
 }

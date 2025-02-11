@@ -5,7 +5,6 @@ const page = () => {
   return (
     <>  
     login
-    <a href="/login/user"> users</a>
     </>
   )
 }
