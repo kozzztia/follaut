@@ -16,18 +16,20 @@ const Messager = () => {
         .then(res => res.json())
         .then(data => setmessages(data))
     }, [API_URL])
+    if(messages.length === 0){
+        return <p>loading...</p>
+    }
+
   return (
     <div>
         {
-            messages.map((message: Message) => (
+            messages?.map((message: Message) => (
                 <div key={message.id}>
                     <h2>{message.author}</h2>
                     <p>{message.message}</p>
                 </div>
             ))
         }
-
-
     </div>
   )
 }
