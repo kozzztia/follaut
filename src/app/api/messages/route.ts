@@ -2,19 +2,19 @@
 import { NextResponse } from "next/server";
 import sql from "@/lib/messages";
 
-type User = {
+type Message = {
   id: number;
-  name: string;
-  role: "admin" | "user";
+  author: string;
+  message: string;
 };
 
 
 export async function GET() {
   try {
-    const users: User[] = (await sql`SELECT id, name, role FROM users`) as User[];
+    const users: Message[] = (await sql`SELECT * FROM messages`) as Message[];
     return NextResponse.json(users);
   } catch (error) {
-    console.error("Ошибка получения пользователей:", error);
+    console.error("Ошибка получения сообщений:", error);
     return NextResponse.json({ error: "Ошибка запроса" }, { status: 500 });
   }
 }

@@ -1,8 +1,9 @@
+import Messager from '@/components/Messager/Messager';
 import React from 'react'
 
-const getUsers = async () => {
+const getMessages = async () => {
     try {
-        const response = await fetch('http://localhost:3000/api/users', {
+        const response = await fetch('http://localhost:3000/api/messages', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -16,24 +17,32 @@ const getUsers = async () => {
     }
 }
 
-type User = {
+type Message = {
     id: number;
-    name: string;
-    role: string;
+    author: string;
+    message: string;
 }
 
 const page = async() => {
-    const users = await getUsers();
+    const message = await getMessages();
+    if(!message) {
+        return (
+            <>
+                <h2>Messages not found</h2>
+            </>
+        )
+    }
     return (
         <>
             {
-                users.map((user: User) => (
-                    <div key={user.id}>
-                        <h2>{user.name}</h2>
-                        <p>{user.role}</p>
+                message.map((message: Message) => (
+                    <div key={message.id}>
+                        <h2>{message.author}</h2>
+                        <p>{message.message}</p>
                     </div>
                 ))
             }
+            <Messager />
         </>
     )
 }
