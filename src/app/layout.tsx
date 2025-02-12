@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans, VT323 } from "next/font/google";
 import "./globals.css";
 import styles from "./layout.module.css";
+import MainHeader from "@/components/Header/MainHeader";
 
 
 const getNotoSans = Noto_Sans({
@@ -32,10 +33,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${getNotoSans.variable} ${getVT323.variable}`}>
         <main className={styles.mainLayout}> 
-          <section>
+          <MainHeader className={styles.mainHeader} />
+          <section className={styles.mainSection}>
             {children}
-          </section>
-          
+          </section>       
         </main>
       </body>
     </html>

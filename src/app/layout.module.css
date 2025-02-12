@@ -1,3 +1,15 @@
-.mainLayout{
+.mainLayout {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  box-shadow: var(--element-shadow);
+  background-color: inherit;
+  .mainHeader {
     position: relative;
-}   
+  }
+  .mainSection {
+    position: relative;
+  }
+}
