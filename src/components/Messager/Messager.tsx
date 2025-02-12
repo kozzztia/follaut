@@ -1,6 +1,5 @@
 'use client'
-import { env } from 'process';
-import React, { useEffect } from 'react'
+import React, { useLayoutEffect } from 'react'
 
 type Message = {
     id: number;
@@ -9,13 +8,14 @@ type Message = {
 }
 
 const Messager = () => {
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
     const [messages, setmessages] = React.useState<Message[]>([])
 
-    useEffect(() => {
-        fetch(`${env.NEXT_PUBLIC_API_URL}/messages`)
+    useLayoutEffect(() => {
+        fetch(`${API_URL}/messages`)
         .then(res => res.json())
         .then(data => setmessages(data))
-    })
+    }, [API_URL])
   return (
     <div>
         {
