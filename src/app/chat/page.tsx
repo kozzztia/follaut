@@ -4,7 +4,7 @@ import React from 'react'
 
 const getMessages = async () => {
     try {
-        const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/messages}`, {
+        const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/messages`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
