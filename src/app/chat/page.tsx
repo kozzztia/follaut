@@ -1,9 +1,10 @@
 import Messager from '@/components/Messager/Messager';
+import { env } from 'process';
 import React from 'react'
 
 const getMessages = async () => {
     try {
-        const response = await fetch('http://localhost:3000/api/messages', {
+        const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/messages}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
