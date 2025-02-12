@@ -1,4 +1,5 @@
 'use client'
+import { env } from 'process';
 import React, { useEffect } from 'react'
 
 type Message = {
@@ -11,7 +12,7 @@ const Messager = () => {
     const [messages, setmessages] = React.useState<Message[]>([])
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/messages')
+        fetch(`${env.NEXT_PUBLIC_API_URL}/messages`)
         .then(res => res.json())
         .then(data => setmessages(data))
     })
