@@ -1,20 +1,34 @@
+// src/app/api/users/route.ts
 
-import { NextResponse } from "next/server";
-import sql from "@/lib/messages";
+import { NextRequest, NextResponse } from "next/server";
+import sql from "@/lib/db"; // Убедись, что путь корректный!
 
 type User = {
-  id: number;
-  name: string;
-  role: "admin" | "user";
+    id: number;
+    name: string;
+    login: string;
 };
+type FullUser = User & {
+    password: string;
+    role: string;
+}
 
+export async function GET(request: NextRequest) {
+    try {
+        const login = request.nextUrl.searchParams.get("login");
 
-export async function GET() {
-  try {
-    const users: User[] = (await sql`SELECT id, name, role FROM users`) as User[];
-    return NextResponse.json(users);
-  } catch (error) {
-    console.error("Ошибка получения пользователей:", error);
-    return NextResponse.json({ error: "Ошибка запроса" }, { status: 500 });
-  }
+        if (login) {
+            const user: FullUser[] = (await sql`SELECT * FROM users WHERE login = ${login}`) as FullUser[];
+            if (user.length === 0) {
+                return NextResponse.json({ error: "Пользователь не найден" }, { status: 404 });
+            }
+            return NextResponse.json(user[0]);
+        } else {
+            const users: User[] = (await sql`SELECT id, name, login FROM users`) as User[];
+            return NextResponse.json(users);
+        }
+    } catch (error) {
+        console.error("Ошибка базы данных:", error);
+        return NextResponse.json({ error: "Ошибка сервера" }, { status: 500 });
+    }
 }
