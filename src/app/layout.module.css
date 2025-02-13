@@ -6,10 +6,15 @@
   min-height: 100svh;
   box-shadow: var(--element-shadow);
   background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   .mainHeader {
     position: relative;
   }
   .mainSection {
     position: relative;
+    padding: var(--padding-s) var(--padding-m);
+    height: 100%;
   }
 }

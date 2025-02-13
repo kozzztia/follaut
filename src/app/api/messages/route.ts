@@ -1,6 +1,6 @@
 
 import { NextResponse } from "next/server";
-import sql from "@/lib/messages";
+import sql from "@/lib/db";
 
 type Message = {
   id: number;
