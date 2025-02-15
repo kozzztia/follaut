@@ -1,15 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import sql from "@/lib/db"; // Убедись, что путь правильный!
-
-type User = {
-    id: number;
-    name: string;
-    login: string;
-};
-type FullUser = User & {
-    password: string;
-    role: string;
-};
+import sql from "@/lib/db";
 
 // Функция для добавления CORS-заголовков
 const addCORS = (response: NextResponse) => {
@@ -19,22 +9,25 @@ const addCORS = (response: NextResponse) => {
     return response;
 };
 
+// Получение пользователей или конкретного пользователя
 export async function GET(request: NextRequest) {
     try {
         const login = request.nextUrl.searchParams.get("login");
+        const password = request.nextUrl.searchParams.get("password");
 
         let response;
-        if (login) {
-            const user: FullUser[] = (await sql`SELECT * FROM users WHERE login = ${login}`) as FullUser[];
-            response = user.length > 0
-                ? NextResponse.json(user[0])
-                : NextResponse.json({ error: "Пользователь не найден" }, { status: 404 });
+        if (login && password) {
+            const user = await sql`SELECT * FROM users WHERE login = ${login} AND password = ${password}`;
+            if (user.length > 0) {
+                response = NextResponse.json(user[0]);
+            } else {
+                response = NextResponse.json({ error: "Неверный логин или пароль" }, { status: 401 });
+            }
         } else {
-            const users: User[] = (await sql`SELECT id, name, login FROM users`) as User[];
+            const users = await sql`SELECT id, name, login FROM users`;
             response = NextResponse.json(users);
         }
 
-        // Добавляем CORS и возвращаем результат
         return addCORS(response);
 
     } catch (error) {

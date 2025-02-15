@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 import React from 'react'
+import styles from './styles.module.css'
+import LoginForm from '@/components/(client)/Form/LoginForm';
 
 
 export const metadata: Metadata = {
@@ -10,17 +12,9 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <>  
-      <form>
-        <label>
-          <input type="text" id="login"  />
-        </label>
-        <label >
-          <input type="password" id="password" autoComplete='off'/>
-        </label>
-        <button>login</button>
-      </form>
-    </>
+    <div className={styles.loginWrapper}>  
+        <LoginForm />
+    </div>
   )
 }
 
