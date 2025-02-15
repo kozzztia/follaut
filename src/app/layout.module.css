@@ -15,6 +15,6 @@
   .mainSection {
     position: relative;
     padding: var(--padding-s) var(--padding-m);
-    height: 100%;
+   flex: 1;
   }
 }

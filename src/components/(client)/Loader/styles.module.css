@@ -1,0 +1,22 @@
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background-color: var(--green-accent-color);
+    border-radius: var(--radius);
+    animation: loader .2s ease-in-out;
+    z-index: 9999;
+}
+
+@keyframes loader {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 50%;
+    }
+    100% {
+        width: 100%;
+    }
+}

@@ -21,7 +21,7 @@ const Messager = () => {
     }
 
   return (
-    <div>
+    <>
         {
             messages?.map((message: Message) => (
                 <div key={message.id}>
@@ -30,7 +30,7 @@ const Messager = () => {
                 </div>
             ))
         }
-    </div>
+    </>
   )
 }
 
