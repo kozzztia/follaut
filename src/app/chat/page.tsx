@@ -1,4 +1,4 @@
-import Messager from '@/components/Messager/Messager';
+import Messager from '@/components/(client)/Messager/Messager';
 
 import React from 'react'
 

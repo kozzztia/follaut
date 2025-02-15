@@ -6,10 +6,10 @@ const page = () => {
     <>  
       <form>
         <label>
-          <input type="text" id="login" />
+          <input type="text" id="login"  />
         </label>
         <label >
-          <input type="password" id="password" />
+          <input type="password" id="password" autoComplete='off'/>
         </label>
         <button>login</button>
       </form>
