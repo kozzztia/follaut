@@ -44,3 +44,15 @@ export async function GET(request: NextRequest) {
         return addCORS(errorResponse);
     }
 }
+
+export async function POST(request: NextRequest) {
+    try {
+        const { name, login, password } = await request.json();
+        const role = "user";
+        const [user] = await sql`INSERT INTO users (name, login, password, role) VALUES (${name}, ${login}, ${password}, ${role}) RETURNING id, name, login, role`;
+        return NextResponse.json(user);
+    } catch (error) {
+        console.error("Ошибка базы данных:", error);
+        return NextResponse.json({ error: "Ошибка сервера" }, { status: 500 });
+    }
+}

@@ -15,7 +15,7 @@ const Messager = async() => {
     const messages = await getMessages();
 
   return (
-    <div className={styles.messager}>
+    <div className={styles.chat}>
         {
             messages?.map((message: FullMessageType) => (
                 <Message key={message.id} message={message.message} author={message.author}/>

@@ -6,7 +6,7 @@ import HeaderNavigation from './HeaderNavigation'
 
 
 type Props = {
-    className?: string
+    className?: string;
 }
 
 const MainHeader: React.FC<Props> = (props) => {

@@ -1,4 +1,5 @@
-import Messager from '@/components/(server)/Messager/Messager';
+import Messager from '@/components/(client)/Messager/Messager';
+import Chat from '@/components/(server)/Chat/Chat';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ import React from 'react'
 const page = () => {
     return (
         <>
+            <Chat />
             <Messager />
         </>
     )
