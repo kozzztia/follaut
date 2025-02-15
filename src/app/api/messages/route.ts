@@ -12,8 +12,8 @@ export async function GET() {
     const messages: Message[] = (await sql`SELECT * FROM messages`) as Message[];
 
     const response = NextResponse.json(messages);
-    // response.headers.set("Access-Control-Allow-Origin", "https://follaut.vercel.app");
-    response.headers.set("Access-Control-Allow-Origin", "*");
+    response.headers.set("Access-Control-Allow-Origin", `${process.env.NEXT_PUBLIC_URL}`);
+    // response.headers.set("Access-Control-Allow-Origin", "*");
     response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
     response.headers.set("Access-Control-Allow-Headers", "Content-Type");
 
