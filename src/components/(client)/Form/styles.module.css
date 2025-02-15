@@ -3,11 +3,12 @@
   display: flex;
   flex-direction: column;
   gap: var(--padding-s);
-  .formLabel {
-    display: flex;
-    gap: var(--padding-s);
-    align-items: center;
-  }
+  box-shadow: var(--element-shadow);
+  padding: var(--padding-l) var(--padding-m) ;
+  border-radius: var(--radius);
+  width: 100%;
+  margin: var(--padding-l) auto;
+  max-width: 350px;
 }
 
 .label {
@@ -17,7 +18,7 @@
   gap: var(--padding-s);
 
   .input {
-    
+    width: 100%;
     padding: var(--padding-s) var(--padding-m);
     border-radius: var(--radius);
     border: 1px solid var(--green-border-color);
@@ -28,7 +29,7 @@
     }
   }
   .title{
-
+    min-width: 100px;
     font-weight: 600;
   }
 }
@@ -39,6 +40,7 @@
   border: 1px solid var(--green-border-color);
   width: 100%;
   transition: var(--transition);
+  cursor: pointer;
   &:hover {
     border-color: var(--green-accent-color);
   }

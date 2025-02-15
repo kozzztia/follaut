@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import React from 'react'
-import styles from './styles.module.css'
 import LoginForm from '@/components/(client)/Form/LoginForm';
+import Link from 'next/link';
 
 
 export const metadata: Metadata = {
@@ -12,9 +12,10 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <div className={styles.loginWrapper}>  
-        <LoginForm />
-    </div>
+    <>
+      <LoginForm />
+      <Link href="/login/registration">🔗 Регистрация</Link>
+    </>
   )
 }
 

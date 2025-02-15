@@ -19,3 +19,12 @@ export async function loginUser(formData: FormData) {
         return { user: null, message: "⚠️ Ошибка сервера" };
     }
 }
+
+
+export async function registerUser(formData: FormData) {
+    const name = formData.get("name");
+    const login = formData.get("login");
+    const password = formData.get("password");
+
+    return { user: { name, login, password }, message: "все гуд" };
+}
