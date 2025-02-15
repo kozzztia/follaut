@@ -1,0 +1,17 @@
+.messager {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--padding-s);
+  .message {
+    padding: var(--padding-s) var(--padding-m);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--padding-s);
+    border-radius: var(--radius);
+    border: 1px solid var(--green-border-color);
+  }
+}
