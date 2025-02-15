@@ -6,7 +6,7 @@ type User = {
     login: string;
 };
 
-const getUsers = async () => {
+const getUsers = async () : Promise<User[]>  => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users`, { cache: "no-store" });
     if (!res.ok) throw new Error("Failed to fetch users");
     return res.json();
@@ -27,5 +27,4 @@ const Page = async () => {
         </div>
     );
 };
-
 export default Page;
