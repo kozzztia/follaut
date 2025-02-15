@@ -1,24 +1,23 @@
 "use client";
 import React, { useRef, useState, useTransition } from "react";
 import styles from "./styles.module.css";
-import { loginUser } from "./serverActions";
-import { loginInputs } from "@/constants/constants";
+import { registerUser } from "./serverActions";
+import {registrationInputs } from "@/constants/constants";
 import CustomInput from "./CustomInput";
 import CustomButton from "./CustomButton";
+import { useRouter } from 'next/navigation';
 
 const LoginForm = () => {
     const [message, setMessage] = useState<string | null>(null);
     const [pending, startTransition] = useTransition();
     const formRef = useRef<HTMLFormElement>(null);
+    const pathname = useRouter();
 
     const handleSubmit = async (formData: FormData) => {
         startTransition(async () => {
-            const result = await loginUser(formData);
-            if (result.user) {
-                console.log("🟢 Пользователь найден:", result.user);
-                formRef.current?.reset();
-            }
-            setMessage(result.message);
+            const result = await registerUser(formData);
+            setMessage(result.message);   
+            pathname.push("/chat");
         });
     };
 
@@ -26,7 +25,7 @@ const LoginForm = () => {
         <form action={handleSubmit} className={styles.form} ref={formRef}>
 
             {
-                loginInputs.map((input) => (
+                registrationInputs.map((input) => (
                     <CustomInput key={input.id} {...input} disabled={pending} />
                 ))
             }
