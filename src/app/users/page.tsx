@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import React from 'react';
 
@@ -6,6 +7,12 @@ type User = {
     name: string;
     login: string;
 };
+
+
+export const metadata: Metadata = {
+    title: "users",
+    description: "users description",
+  };
 
 const getUsers = async (): Promise<User[]> => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users`, { cache: "no-store" });

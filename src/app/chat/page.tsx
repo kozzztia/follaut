@@ -1,4 +1,11 @@
-import Messager from '@/components/(client)/Messager/Messager';
+import Messager from '@/components/(server)/Messager/Messager';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "chat",
+    description: "chat description",
+  };
+  
 
 import React from 'react'
 

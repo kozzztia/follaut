@@ -1,7 +1,7 @@
-import { navigation } from '@/constants/constants'
 import React from 'react'
 import styles from './styles.module.css'
-import Link from 'next/link'
+import HeaderNavigation from './HeaderNavigation'
+
 
 
 
@@ -14,13 +14,7 @@ const MainHeader: React.FC<Props> = (props) => {
   return (
     <header className={`${className} ${styles.mainHeader}`}>
         <h1>Header</h1>
-        <nav className={styles.mainNavigation}>
-            {
-                navigation.map(item => (
-                    <Link key={item.id} href={item.href}>{item.name}</Link>
-                ))
-            }
-        </nav>
+        <HeaderNavigation />
     </header>
   )
 }

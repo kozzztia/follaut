@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Noto_Sans, VT323 } from "next/font/google";
 import "./globals.css";
 import styles from "./layout.module.css";
@@ -20,11 +19,6 @@ const getVT323 = VT323({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Next App",
-  description: "description about next app",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,9 +29,9 @@ export default function RootLayout({
       <body className={`${getNotoSans.variable} ${getVT323.variable}`}>
 
         <main className={styles.mainLayout}>
-          <Loader />
           <MainHeader className={styles.mainHeader} />
           <section className={styles.mainSection}>
+          <Loader />
             {children}
           </section>
         </main>
