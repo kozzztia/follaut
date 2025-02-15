@@ -31,7 +31,7 @@ export default function RootLayout({
         <main className={styles.mainLayout}>
           <MainHeader className={styles.mainHeader} />
           <section className={styles.mainSection}>
-          <Loader />
+            <Loader />
             {children}
           </section>
         </main>

@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: var(--padding-s);
   box-shadow: var(--element-shadow);
-  padding: var(--padding-l) var(--padding-m) ;
+  padding: var(--padding-l) var(--padding-m);
   border-radius: var(--radius);
   width: 100%;
   margin: var(--padding-l) auto;
@@ -28,25 +28,61 @@
       border-color: var(--green-accent-color);
     }
   }
-  .title{
+  .title {
     min-width: 100px;
     font-weight: 600;
   }
 }
 
 .button {
+  background-color: var(--green-text-color-secondary);
   padding: var(--padding-s) var(--padding-m);
   border-radius: var(--radius);
   border: 1px solid var(--green-border-color);
   width: 100%;
   transition: var(--transition);
   cursor: pointer;
+  font-weight: bold;
+  color: var(--green-border-color);
   &:hover {
-    border-color: var(--green-accent-color);
+    transform: scale(1.05);
   }
 
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+}
+.link {
+  text-align: center;
+  text-decoration: none;
+  color: var(--green-border-color);
+  transition: var(--transition);
+  &:hover {
+    color: var(--green-accent-color);
+  }
+}
+
+.messageForm {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: var(--padding-s);
+  width: 100%;
+  .textarea {
+    width :100%;
+    resize: none;
+    border-radius: var(--radius);
+    border: 1px solid var(--green-border-color);
+    outline: none;
+    transition: var(--transition);
+    padding: var(--padding-s);
+    &:focus {
+      border-color: var(--green-accent-color);
+    }
+  }
+  .sendButton {
+    max-width :100px;
   }
 }

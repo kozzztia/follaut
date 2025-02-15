@@ -26,5 +26,26 @@ export async function registerUser(formData: FormData) {
     const login = formData.get("login");
     const password = formData.get("password");
 
-    return { user: { name, login, password }, message: "все гуд" };
+    try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, login, password }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            return { user: data, message: `✅ Успешная регистрация, ${data.name}` };
+        } else {
+            return { user: null, message: `❌ ${data.error}` };
+        }
+
+    } catch (error) {
+        console.error("Ошибка запроса:", error);
+        return { user: null, message: "⚠️ Ошибка сервера" };
+    }
+
 }
