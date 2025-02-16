@@ -1,23 +1,29 @@
 "use client";
-import React, { useRef, useTransition } from "react";
+import React, { useRef, useState, useTransition } from "react";
 import styles from "./styles.module.css";
 import CustomButton from "./CustomButton";
+import { sendMessage } from "./serverActions";
 
 const MessageForm = () => {
     const [pending, startTransition] = useTransition();
     const messageRef = useRef<HTMLFormElement>(null);
+    const [message, setMessage] = useState<string | null>(null);
+
 
     const handleSubmit = async (formData: FormData) => {
-      const newMessage = formData.get("message");
         startTransition(async () => {
-          console.log(newMessage);
+          const result = await sendMessage(formData);
+          setMessage(result.message.message);
           messageRef.current?.reset();
         });
     };
 
+    const user = JSON.parse(localStorage.getItem("user") || "{}");
+
     return (
         <form action={handleSubmit} className={styles.messageForm} ref={messageRef}>
-          <textarea name="message" className={styles.textarea}></textarea>
+          <input type="text" name="author" hidden value={user.name} readOnly/>
+          <textarea name="message" className={styles.textarea} placeholder={`${message?message: 'empty now'}`}></textarea>
           <CustomButton disabled={pending} title="Send" className={styles.sendButton}/>
         </form>
     );

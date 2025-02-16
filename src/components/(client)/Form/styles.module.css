@@ -81,6 +81,12 @@
     &:focus {
       border-color: var(--green-accent-color);
     }
+    &::placeholder {
+      position: relative;
+      color: var(--green-border-color);
+      top:50%;
+      transform: translate(0, -50%);
+    }
   }
   .sendButton {
     max-width :100px;

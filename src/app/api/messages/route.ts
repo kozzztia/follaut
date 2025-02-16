@@ -23,3 +23,14 @@ export async function GET() {
     return NextResponse.json({ error: "Ошибка запроса" }, { status: 500 });
   }
 }
+
+export async function POST(request: Request) {
+  try {
+    const { author, message } = await request.json();
+    const [newMessage] = await sql`INSERT INTO messages (author, message) VALUES (${author}, ${message}) RETURNING id, author, message`;
+    return NextResponse.json(newMessage);
+  } catch (error) {
+    console.error("Ошибка отправки сообщений:", error);
+    return NextResponse.json({ error: "Ошибка запроса" }, { status: 500 });
+  }
+}
