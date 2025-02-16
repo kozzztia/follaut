@@ -49,3 +49,31 @@ export async function registerUser(formData: FormData) {
     }
 
 }
+
+
+export async function sendMessage(formData: FormData) {
+    const author = formData.get("author");
+    const message = formData.get("message");
+
+    try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/messages`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ author, message }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            return { message: data, error: null };
+        } else {
+            return { message: null, error: data.error };
+        }
+
+    } catch (error) {
+        console.error("Ошибка запроса:", error);
+        return { message: null, error: "⚠️ Ошибка сервера" };
+    }    
+}
