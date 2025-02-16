@@ -12,7 +12,10 @@ const getMessages = async (): Promise<FullMessageType[]> => {
 }
 
 const Messager = async() => {
-    const messages = await getMessages();
+    const result = await getMessages();
+    // оставь 3 последние
+
+    const messages = result.slice(-3);
 
   return (
     <div className={styles.chat}>
