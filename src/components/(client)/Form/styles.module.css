@@ -78,6 +78,7 @@
     outline: none;
     transition: var(--transition);
     padding: var(--padding-s);
+    
     &:focus {
       border-color: var(--green-accent-color);
     }

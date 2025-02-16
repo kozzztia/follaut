@@ -15,6 +15,7 @@ const MessageForm = () => {
           const result = await sendMessage(formData);
           setMessage(result.message.message);
           messageRef.current?.reset();
+          window.location.reload();
         });
     };
 
